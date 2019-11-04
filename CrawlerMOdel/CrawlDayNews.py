@@ -4,6 +4,13 @@ import time
 import json
 import os
 import logging
+
+##按照天进行抓取，可以配置抓取哪些天的新闻
+#功能： 1.可以用于后期热点提取系统时间段内新闻数据的获取进为进一步获取时间段内的新闻热点奠定基础。
+#      2.可以进行主题自适应聚焦爬虫
+#      3.可以大量获取时间段内的新闻数据，提供分析
+
+
 def getlloger():
     loggerpath=os.path.join(os.getcwd(),'RunningLog.txt')
     logger = logging.getLogger("loggingmodule.NomalLogger")
