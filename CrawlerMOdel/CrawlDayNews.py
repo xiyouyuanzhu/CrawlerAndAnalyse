@@ -45,11 +45,11 @@ def ParseModel():
             strDay=str(day)
         strDate='06{}'.format(strDay)
         Time=strYear+strDate
-        demo1(Time)
+        CrawlDayTime(Time)
         time.sleep(2)
 
 #  解析输入时间参数  主函数   诱导网页链接提取
-def demo1(Time):
+def CrawlDayTime(Time):
     logger=getlloger()
     #Time = input('Input time  like 20191026 ')
     #Time='20190501'
@@ -93,7 +93,7 @@ def demo1(Time):
             print("url=",url)
             print("date=",date)
             try:
-                content=demo2(url)
+                content=ExtractDetail(url)
             except Exception as e :
                 logger.error('Content get error')
                 continue
@@ -108,7 +108,7 @@ def demo1(Time):
             #jsonNews=json.dumps(dictNews)
             #print(jsonNews)
             try:
-                demo3(dictNews,FilePath)
+                SavedictToJsonFile(dictNews,FilePath)
             except Exception as e :
                 print('Save faild :',e)
             else:
@@ -126,7 +126,7 @@ def demo1(Time):
     #     time.sleep(1)
 
 # 提取网页核心内容
-def demo2(url):
+def ExtractDetail(url):
     #url='http://www.chinanews.com/sh/2019/05-02/8826407.shtml'
     try:
         res=requests.get(url)
@@ -147,13 +147,13 @@ def demo2(url):
         print("content  :",content)
     return content
 # 存储demo
-def  demo3(model,FilePath):
+def  SavedictToJsonFile(model,FilePath):
     with open(FilePath, 'w', encoding='utf-8') as json_file:
         json.dump(model, json_file, ensure_ascii=False)
 
 #读取json文件
 
-def demo4(FilePath):
+def GetdictFromJsonFile(FilePath):
     dict={}
     FilePath='/home/yuanzhu/Desktop/NewsData/20190918/201909180.json'
     with open(FilePath,'r',encoding='utf-8') as f:
