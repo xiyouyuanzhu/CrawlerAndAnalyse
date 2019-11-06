@@ -1,0 +1,52 @@
+
+    <html>
+    <head>
+      <script type="text/javascript" src="VIS/dist/vis.js"></script>
+      <link href="VIS/dist/vis.css" rel="stylesheet" type="text/css">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+
+    <div id="VIS_draw"></div>
+
+    <script type="text/javascript">
+      var nodes = [{'id': 101, 'group': 'Event', 'label': '海南省政府'}, {'id': 116, 'group': 'Event', 'label': '三亚市'}, {'id': 120, 'group': 'Event', 'label': '母港'}, {'id': 16, 'group': 'Event', 'label': '建设'}, {'id': 10, 'group': 'Event', 'label': '国际'}, {'id': 106, 'group': 'Event', 'label': '三亚市政府'}, {'id': 60, 'group': 'Event', 'label': '意大利'}, {'id': 83, 'group': 'Event', 'label': '机构'}, {'id': 31, 'group': 'Event', 'label': '成为之一'}, {'id': 75, 'group': 'Event', 'label': '人物'}, {'id': 119, 'group': 'Event', 'label': '歌诗达邮轮'}, {'id': 117, 'group': 'Event', 'label': '凤凰岛'}, {'id': 115, 'group': 'Event', 'label': '陈铁军'}, {'id': 104, 'group': 'Event', 'label': '中国'}, {'id': 85, 'group': 'Event', 'label': '地名'}, {'id': 40, 'group': 'Event', 'label': '产业'}, {'id': 103, 'group': 'Event', 'label': '叶蓬'}, {'id': 121, 'group': 'Event', 'label': '三亚'}, {'id': 19, 'group': 'Event', 'label': '关键词'}, {'id': 36, 'group': 'Event', 'label': '邮轮'}, {'id': 54, 'group': 'Event', 'label': '介绍'}, {'id': 21, 'group': 'Event', 'label': '进行运营'}, {'id': 107, 'group': 'Event', 'label': '海南'}, {'id': 46, 'group': 'Event', 'label': '航线'}, {'id': 38, 'group': 'Event', 'label': '旅游'}, {'id': 29, 'group': 'Event', 'label': '发展产业'}, {'id': 44, 'group': 'Event', 'label': '歌诗达'}, {'id': 23, 'group': 'Event', 'label': '有风情'}, {'id': 33, 'group': 'Event', 'label': '重视地位'}, {'id': 55, 'group': 'Event', 'label': '高频词'}, {'id': 72, 'group': 'Event', 'label': '华南'}, {'id': 118, 'group': 'Event', 'label': '三亚凤凰岛'}, {'id': 48, 'group': 'Event', 'label': '发展'}, {'id': 25, 'group': 'Event', 'label': '是引入'}, {'id': 102, 'group': 'Event', 'label': '东南亚区'}];
+      var edges = [{'from': 36, 'label': '', 'to': 19}, {'from': 44, 'label': '', 'to': 19}, {'from': 38, 'label': '', 'to': 19}, {'from': 107, 'label': '', 'to': 19}, {'from': 40, 'label': '', 'to': 19}, {'from': 10, 'label': '', 'to': 19}, {'from': 46, 'label': '', 'to': 19}, {'from': 120, 'label': '', 'to': 19}, {'from': 16, 'label': '', 'to': 19}, {'from': 48, 'label': '', 'to': 19}, {'from': 44, 'label': '', 'to': 21}, {'from': 36, 'label': '', 'to': 23}, {'from': 107, 'label': '', 'to': 25}, {'from': 36, 'label': '', 'to': 38}, {'from': 107, 'label': '', 'to': 29}, {'from': 48, 'label': '', 'to': 31}, {'from': 36, 'label': '', 'to': 33}, {'from': 40, 'label': '', 'to': 48}, {'from': 36, 'label': '', 'to': 55}, {'from': 38, 'label': '', 'to': 55}, {'from': 40, 'label': '', 'to': 55}, {'from': 107, 'label': '', 'to': 55}, {'from': 44, 'label': '', 'to': 55}, {'from': 46, 'label': '', 'to': 55}, {'from': 48, 'label': '', 'to': 55}, {'from': 121, 'label': '', 'to': 55}, {'from': 120, 'label': '', 'to': 55}, {'from': 54, 'label': '', 'to': 55}, {'from': 120, 'label': '', 'to': 85}, {'from': 107, 'label': '', 'to': 85}, {'from': 60, 'label': '', 'to': 85}, {'from': 106, 'label': '', 'to': 83}, {'from': 115, 'label': '', 'to': 75}, {'from': 118, 'label': '', 'to': 85}, {'from': 104, 'label': '', 'to': 85}, {'from': 116, 'label': '', 'to': 85}, {'from': 72, 'label': '', 'to': 85}, {'from': 103, 'label': '', 'to': 75}, {'from': 119, 'label': '', 'to': 83}, {'from': 117, 'label': '', 'to': 85}, {'from': 121, 'label': '', 'to': 85}, {'from': 101, 'label': '', 'to': 83}, {'from': 102, 'label': '', 'to': 85}, {'from': 101, 'label': '', 'to': 107}, {'from': 103, 'label': '', 'to': 102}, {'from': 117, 'label': '', 'to': 116}, {'from': 101, 'label': '', 'to': 106}, {'from': 107, 'label': '', 'to': 104}, {'from': 107, 'label': '', 'to': 106}, {'from': 107, 'label': '', 'to': 101}, {'from': 106, 'label': '', 'to': 101}, {'from': 102, 'label': '', 'to': 103}, {'from': 104, 'label': '', 'to': 107}, {'from': 106, 'label': '', 'to': 107}, {'from': 121, 'label': '', 'to': 120}, {'from': 115, 'label': '', 'to': 116}, {'from': 119, 'label': '', 'to': 118}, {'from': 116, 'label': '', 'to': 115}, {'from': 116, 'label': '', 'to': 117}, {'from': 118, 'label': '', 'to': 119}, {'from': 120, 'label': '', 'to': 121}];
+
+      var container = document.getElementById("VIS_draw");
+
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+          nodes: {
+              shape: 'circle',
+              size: 15,
+              font: {
+                  size: 15
+              }
+          },
+          edges: {
+              font: {
+                  size: 10,
+                  align: 'center'
+              },
+              color: 'red',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 1.2}
+              },
+              smooth: {enabled: true}
+          },
+          physics: {
+              enabled: true
+          }
+      };
+
+      var network = new vis.Network(container, data, options);
+
+    </script>
+    </body>
+    </html>
+    
