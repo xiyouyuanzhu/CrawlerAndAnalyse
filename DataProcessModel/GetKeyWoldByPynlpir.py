@@ -6,7 +6,7 @@ import  os
 
 
 def controlGetKeyworld():
-    logger=Getlloger()
+
              #以5月1日的新闻为例
     NewsDir='/home/yuanzhu/Desktop/NewsData/20190501/'
     newsList=os.listdir(NewsDir)
@@ -21,14 +21,13 @@ def controlGetKeyworld():
                 continue
         else:
             strLogErr='{} is not exist'.format(filepath)
-            logger.error(strLogErr)
 
     print(allKeysList)#打印所有的关键此项信息
     pr.close()
 
 
 def GetKeyWorld(filePath):  #使用PYNLPIR getkeywokld来实现
-    logger=Getlloger()
+    filePath='/home/yuanzhu/Desktop/NewsData/20190603/20190603419.json'
     try:
         pr.open()
         #filePath='/home/yuanzhu/Desktop/NewsData/20190501/20190501181.json'
@@ -47,10 +46,11 @@ def GetKeyWorld(filePath):  #使用PYNLPIR getkeywokld来实现
     except Exception as e :
        strLogErr='Get  {}  keyworld error :{}'.format(filePath,e)
        print(strLogErr)
-       logger.error(strLogErr)
        return None
     #print(keywords)
     return keywords
 
 if __name__ == '__main__':
-    controlGetKeyworld()
+    #controlGetKeyworld()
+    keys =GetKeyWorld('/home/yuanzhu/Desktop/NewsData/20190603/20190603419.json')
+    print('keyword= ',keys)
