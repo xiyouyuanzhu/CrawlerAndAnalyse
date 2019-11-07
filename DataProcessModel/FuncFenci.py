@@ -44,8 +44,10 @@ def NewFunc():
     # print("NameList=",NamedList)
     # print('OtherList=',OtherList)
     print('Alllist=',AllList)
-
-
+def  ttt():
+    for i in range(3,4):
+        print(i)
 if __name__ == '__main__':
-    NewFunc()
+    #NewFunc()
     #OriginFenci()
+    ttt()
