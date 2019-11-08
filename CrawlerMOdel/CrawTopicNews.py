@@ -26,9 +26,10 @@ import os
     print('当前句柄: ', n)  # 会打印所有的句柄
     drive.switch_to_window(n[-1])  # driver切换至最新生产的页面
 '''
-def Start():
+def FuncStartExtract(Topic):
     url = 'http://www.chinanews.com/scroll-news/news1.html'
-    TopicWorld ='美食'
+    #TopicWorld ='美食'
+    TopiWorld=Topic
     chromedriver_path='/usr/bin/chromedriver'
     options = webdriver.ChromeOptions()
     options.add_experimental_option("prefs",
@@ -46,19 +47,19 @@ def Start():
     #清空表单里面的内容
     input.clear()
     # 输入主题词项
-    input.send_keys(TopicWorld)   #***************关键词
+    input.send_keys(TopiWorld)   #***************关键词
     time.sleep(1)
     submit.click()
     n = browser.window_handles
     #print('n',n)
     browser.switch_to_window(n[-1])  #切换标签页
-    SaveFileDir ='/home/yuanzhu/Desktop/NewsData/{}'.format(TopicWorld)
+    SaveFileDir ='/home/yuanzhu/Desktop/NewsData/{}'.format(TopiWorld)
     if os.path.exists(SaveFileDir):
         pass
     else:
         os.mkdir(SaveFileDir)
     index = 12
-    ExtractPageUrl(browser,SaveFileDir,index,TopicWorld)
+    ExtractPageUrl(browser,SaveFileDir,index,TopiWorld)
 
     browser.close()
 
@@ -134,4 +135,5 @@ def ExtractDetail(url):
         dict.update({'content':content})
     return dict
 if __name__ == '__main__':
-    Start()
+    topic = '特朗普'
+    FuncStartExtract(topic)
