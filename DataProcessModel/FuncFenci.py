@@ -1,3 +1,8 @@
+import os
+import sys
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
 from ToolCode.Tinytool import *
 
 
@@ -6,7 +11,8 @@ def  OriginFenci():
     dict = {}
     pr.open()
     dicConf = GetDicConfig()
-    FilePath = dicConf['Testfilepath']
+    #FilePath = dicConf['Testfilepath']
+    FilePath='/home/yuanzhu/Desktop/NewsData/美食/美食38.json'
     DicNews = GetDictFromJsonFile(FilePath)
     content = DicNews['content']
     segs = pr.segment(content, pos_english=False, pos_names='child')
@@ -25,7 +31,8 @@ def NewFunc():
     dict = {}
     pr.open()
     dicConf = GetDicConfig()
-    FilePath = dicConf['Testfilepath']
+    # FilePath = dicConf['Testfilepath']
+    FilePath='/home/yuanzhu/Desktop/NewsData/美食/美食38.json'
     DicNews = GetDictFromJsonFile(FilePath)
     content = DicNews['content']
     segs = pr.segment(content, pos_english=False, pos_names='child')
@@ -48,6 +55,6 @@ def  ttt():
     for i in range(3,4):
         print(i)
 if __name__ == '__main__':
-    #NewFunc()
+    NewFunc()
     #OriginFenci()
-    ttt()
+    #ttt()
