@@ -23,12 +23,12 @@ def getlloger():
 # test
 #logger.debug("this is a debug msg!")
 #logger.info("this is a info msg!")
-def loggerdemo():
-    logger = getlloger()
-    logger.debug('hello this is debug')
-    logger.error('this is error')
-    logger.info('this is info')
-
+# def loggerdemo():
+#     logger = getlloger()
+#     logger.debug('hello this is debug')
+#     logger.error('this is error')
+#     logger.info('this is info')
+#
 
 
 def ParseModel():
