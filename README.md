@@ -1,1 +1,5 @@
-# CrawlerAndAnalyse
+#### CrawlerAndAnalyse
+
+  实现的功能：1.爬取指定主题的网页以json格式存储在本地。   
+             2. 提取时间段内新闻热点信息（热点新闻词项）
+         
